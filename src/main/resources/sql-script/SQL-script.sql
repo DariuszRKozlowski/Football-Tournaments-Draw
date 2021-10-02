@@ -268,3 +268,213 @@ INSERT INTO ConferenceLeagueTeams VALUES
 ('CFR Cluj', (SELECT id FROM Countries WHERE country_name = 'Romania'), 16500, 'C:\Users\Dariusz\Desktop\TournamentsDraw\src\main\resources\img\UEFA Europa League\Cluj.png'),
 ('Zorya Luhansk', (SELECT id FROM Countries WHERE country_name = 'Ukraine'), 15000, 'C:\Users\Dariusz\Desktop\TournamentsDraw\src\main\resources\img\UEFA Europa League\Zoria.png');
 
+ALTER TABLE Countries
+ADD uefa_rating int;
+
+UPDATE Countries
+SET uefa_rating = 90641
+WHERE country_name = 'England';
+
+UPDATE Countries
+SET uefa_rating = 82570
+WHERE country_name = 'Spain';
+
+UPDATE Countries
+SET uefa_rating = 65902
+WHERE country_name = 'Italy';
+
+UPDATE Countries
+SET uefa_rating = 64213
+WHERE country_name = 'Germany';
+
+UPDATE Countries
+SET uefa_rating = 46415
+WHERE country_name = 'France';
+
+UPDATE Countries
+SET uefa_rating = 45216
+WHERE country_name = 'Portugal';
+
+UPDATE Countries
+SET uefa_rating = 36500
+WHERE country_name = 'Netherlands';
+
+UPDATE Countries
+SET uefa_rating = 32850
+WHERE country_name = 'Austria';
+
+UPDATE Countries
+SET uefa_rating = 31682
+WHERE country_name = 'Russia';
+
+UPDATE Countries
+SET uefa_rating = 31300
+WHERE country_name = 'Scotland';
+
+UPDATE Countries
+SET uefa_rating = 30600
+WHERE country_name = 'Ukraine';
+
+UPDATE Countries
+SET uefa_rating = 28875
+WHERE country_name = 'Serbia';
+
+UPDATE Countries
+SET uefa_rating = 28000
+WHERE country_name = 'Belgium';
+
+UPDATE Countries
+SET uefa_rating = 26925
+WHERE country_name = 'Switzerland';
+
+UPDATE Countries
+SET uefa_rating = 24900
+WHERE country_name = 'Croatia';
+
+UPDATE Countries
+SET uefa_rating = 24400
+WHERE country_name = 'Czech Republic';
+
+UPDATE Countries
+SET uefa_rating = 24375
+WHERE country_name = 'Cyprus';
+
+UPDATE Countries
+SET uefa_rating = 24200
+WHERE country_name = 'Greece';
+
+UPDATE Countries
+SET uefa_rating = 23900
+WHERE country_name = 'Turkey';
+
+UPDATE Countries
+SET uefa_rating = 23250
+WHERE country_name = 'Norway';
+
+UPDATE Countries
+SET uefa_rating = 22625
+WHERE country_name = 'Sweden';
+
+UPDATE Countries
+SET uefa_rating = 22575
+WHERE country_name = 'Denmark';
+
+UPDATE Countries
+SET uefa_rating = 22125
+WHERE country_name = 'Israel';
+
+UPDATE Countries
+SET uefa_rating = 19250
+WHERE country_name = 'Bulgaria';
+
+UPDATE Countries
+SET uefa_rating = 16650
+WHERE country_name = 'Romania';
+
+UPDATE Countries
+SET uefa_rating = 15875
+WHERE country_name = 'Poland';
+
+UPDATE Countries
+SET uefa_rating = 15875
+WHERE country_name = 'Hungary';
+
+UPDATE Countries
+SET uefa_rating = 15500
+WHERE country_name = 'Azerbaijan';
+
+UPDATE Countries
+SET uefa_rating = 15500
+WHERE country_name = 'Kazakhstan';
+
+INSERT INTO Countries VALUES
+('Slovenia', 14500);
+
+UPDATE Countries
+SET uefa_rating = 14375
+WHERE country_name = 'Slovakia';
+
+INSERT INTO Countries VALUES
+('Belarus', 12500);
+
+UPDATE Countries
+SET uefa_rating = 10500
+WHERE country_name = 'Moldova';
+
+INSERT INTO Countries VALUES
+('Lithuania', 10000);
+
+INSERT INTO Countries VALUES
+('Bosnia & Herzegovina', 9125);
+
+UPDATE Countries
+SET uefa_rating = 5416
+WHERE country_name = 'Gibraltar';
+
+UPDATE Countries
+SET uefa_rating = 8375
+WHERE country_name = 'Finland';
+
+UPDATE Countries
+SET uefa_rating = 5708
+WHERE country_name = 'Estonia';
+
+UPDATE Countries
+SET uefa_rating = 7875
+WHERE country_name = 'Armenia';
+
+INSERT INTO Countries VALUES
+('Luxembourg', 8750);
+
+INSERT INTO Countries VALUES
+('Latvia', 8625);
+
+INSERT INTO Countries VALUES
+('Kosovo', 8166);
+
+INSERT INTO Countries VALUES
+('Ireland', 8125);
+
+INSERT INTO Countries VALUES
+('Northern Ireland', 8083);
+
+INSERT INTO Countries VALUES
+('Albania', 8000);
+
+INSERT INTO Countries VALUES
+('Faroe Islands', 7250);
+
+INSERT INTO Countries VALUES
+('Malta', 7000);
+
+INSERT INTO Countries VALUES
+('Georgia', 7000);
+
+INSERT INTO Countries VALUES
+('North Macedonia', 7000);
+
+INSERT INTO Countries VALUES
+('Lichtenstein', 6500);
+
+INSERT INTO Countries VALUES
+('Wales', 5500);
+
+INSERT INTO Countries VALUES
+('Iceland', 5375);
+
+INSERT INTO Countries VALUES
+('Montenegro', 4875);
+
+INSERT INTO Countries VALUES
+('Andorra', 4665);
+
+INSERT INTO Countries VALUES
+('San Marino', 1332);
+
+UPDATE Federations
+SET federation_name = 'CONMEBOL'
+WHERE federation_name LIKE 'CONM%';
+
+UPDATE WorldCupTeams
+SET federation = (SELECT id FROM Federations WHERE federation_name = 'CONMEBOL')
+WHERE country = 'Brazil' OR country = 'Argentina' OR country = 'Colombia' OR country = 'Peru' OR country = 'Uruguay';
