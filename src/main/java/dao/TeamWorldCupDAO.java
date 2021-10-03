@@ -27,7 +27,8 @@ public class TeamWorldCupDAO {
             String federation = federationsDAO.getById(result.getInt(3));
             int fifaRank = result.getInt(4);
             boolean isHostCountry = isHostCountry(result.getByte(5));
-            listOfTeams.add(new TeamWorldCup(country, federation, fifaRank, isHostCountry));
+            String path = result.getString(6);
+            listOfTeams.add(new TeamWorldCup(country, federation, fifaRank, isHostCountry, path));
         }
         connection.close();
         return listOfTeams;

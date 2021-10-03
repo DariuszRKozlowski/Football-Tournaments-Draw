@@ -25,7 +25,8 @@ public class TeamEuropaLeagueDAO {
             String name = result.getString(2);
             String country = countryDAO.getById(result.getInt(3));
             int uefaCoefficient = result.getInt(4);
-            listOfClubs.add(new TeamEuropaLeague(name, country, uefaCoefficient));
+            String path = result.getString(5);
+            listOfClubs.add(new TeamEuropaLeague(name, country, uefaCoefficient, path));
         }
         connection.close();
         return listOfClubs;

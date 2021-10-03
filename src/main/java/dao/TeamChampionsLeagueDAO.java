@@ -27,7 +27,8 @@ public class TeamChampionsLeagueDAO {
             int uefaCoefficient = result.getInt(4);
             boolean isCountryChampion = isCountryChampion(result.getByte(5));
             boolean isPreviousUefaWinner = isPreviousWinner(result.getByte(6));
-            listOfClubs.add(new TeamChampionsLeague(name, country, uefaCoefficient, isCountryChampion, isPreviousUefaWinner));
+            String path = result.getString(7);
+            listOfClubs.add(new TeamChampionsLeague(name, country, uefaCoefficient, isCountryChampion, isPreviousUefaWinner, path));
         }
         connection.close();
         return listOfClubs;

@@ -25,7 +25,8 @@ public class TeamEuropeanChampionshipDAO {
             String country = result.getString(2);
             int uefaCoefficient = result.getInt(3);
             boolean isHostCountry = isHostCountry(result.getByte(4));
-            listOfTeams.add(new TeamEuropeanChampionship(country, uefaCoefficient, isHostCountry));
+            String path = result.getString(5);
+            listOfTeams.add(new TeamEuropeanChampionship(country, uefaCoefficient, isHostCountry, path));
         }
         connection.close();
         return listOfTeams;

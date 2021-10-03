@@ -6,13 +6,15 @@ public class TeamChampionsLeague extends Team {
     private final int uefaCoefficient;
     private final boolean isCountryChampion;
     private final boolean isPreviousUefaCompetitionChampion;
+    private final String logoPath;
 
-    public TeamChampionsLeague(String name, String country, int uefaCoefficient, boolean isCountryChampion, boolean isPreviousUefaCompetitionChampion) {
+    public TeamChampionsLeague(String name, String country, int uefaCoefficient, boolean isCountryChampion, boolean isPreviousUefaCompetitionChampion, String logoPath) {
         super(name);
         this.country = country;
         this.uefaCoefficient = uefaCoefficient;
         this.isCountryChampion = isCountryChampion;
         this.isPreviousUefaCompetitionChampion = isPreviousUefaCompetitionChampion;
+        this.logoPath = logoPath;
     }
 
     public String getCountry() {
@@ -31,5 +33,7 @@ public class TeamChampionsLeague extends Team {
         return isPreviousUefaCompetitionChampion;
     }
 
-
+    public String getLogoPath() {
+        return logoPath;
+    }
 }
