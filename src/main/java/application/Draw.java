@@ -6,7 +6,7 @@ import java.util.List;
 
 public abstract class Draw<T extends Team> {
 
-    public abstract List<Team> sortTeamsOut(List<T> teamsList);
+    public abstract List<Team> sortTeamsOut(List<T> teamsList) throws SQLException, IOException;
 
     public abstract Team[][] preparePots(List<T> teamsList);
 

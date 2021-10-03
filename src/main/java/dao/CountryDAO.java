@@ -15,6 +15,7 @@ import java.util.List;
 public class CountryDAO {
 
     private static final String SELECT_ALL = "SELECT * FROM Countries";
+    private static final String SELECT_TOP8 = "SELECT TOP 8 * FROM Countries ORDER BY uefa_rating DESC;";
     private static final String FILTER = " WHERE id = ";
     private static final String ENDING = ";";
 
@@ -46,4 +47,15 @@ public class CountryDAO {
         return countryName;
     }
 
+    public List<String> getTopEight() throws IOException, SQLException {
+        Connection connection = DatabaseConnector.connectToDatabase();
+        Statement statement = connection.createStatement();
+        ResultSet result = statement.executeQuery(SELECT_TOP8);
+        List<String> countriesNames = new ArrayList<>();
+        while(result.next()) {
+            countriesNames.add(result.getString(2));
+        }
+        connection.close();
+        return countriesNames;
+    }
 }

@@ -9,7 +9,7 @@ CREATE TABLE ChampionsLeagueTeams (
 	uefa_coefficient int NOT NULL,
 	is_country_champion bit NOT NULL,
 	is_previous_winner bit NOT NULL,
-	logo image
+	logo varchar(255)
 );
 
 CREATE TABLE EuropaLeagueTeams (
@@ -17,7 +17,7 @@ CREATE TABLE EuropaLeagueTeams (
 	name varchar(35) NOT NULL,
 	country varchar(35) NOT NULL,
 	uefa_coefficient int NOT NULL,
-	logo image
+	logo varchar(255)
 );
 
 CREATE TABLE ConferenceLeagueTeams (
@@ -25,7 +25,7 @@ CREATE TABLE ConferenceLeagueTeams (
 	name varchar(35) NOT NULL,
 	country varchar(35) NOT NULL,
 	uefa_coefficient int NOT NULL,
-	logo image
+	logo varchar(255)
 );
 
 CREATE TABLE EuropeanChampionshipTeams (
@@ -33,7 +33,7 @@ CREATE TABLE EuropeanChampionshipTeams (
 	country varchar(35) NOT NULL,
 	uefa_coefficient int NOT NULL,
 	is_host_country bit NOT NULL,
-	logo image
+	logo varchar(255)
 );
 
 CREATE TABLE Federations (
@@ -47,7 +47,7 @@ CREATE TABLE WorldCupTeams (
 	federation int FOREIGN KEY REFERENCES Federations(id),
 	fifa_rank int NOT NULL,
 	is_host_country bit NOT NULL,
-	logo image
+	logo varchar(255)
 );
 
 CREATE TABLE Countries 
@@ -250,7 +250,7 @@ INSERT INTO ConferenceLeagueTeams VALUES
 ('HJK Helsinki', (SELECT id FROM Countries WHERE country_name = 'Finland'), 5500, 'src\\main\\resources\\img\\UEFA Europa League\\HJK.png'),
 ('Maccabi Haifa', (SELECT id FROM Countries WHERE country_name = 'Israel'), 4875, 'src\\main\\resources\\img\\UEFA Europa League\\Haifa.png'),
 ('Bodo/Glimt', (SELECT id FROM Countries WHERE country_name = 'Norway'), 4200, 'src\\main\\resources\\img\\UEFA Europa League\\BodoGlimt.png'),
-('Mura Murska Sobota', (SELECT id FROM Countries WHERE country_name = 'Slovakia'), 3000, 'src\\main\\resources\\img\\UEFA Europa League\\Mura.png'),
+('Mura Murska Sobota', (SELECT id FROM Countries WHERE country_name = 'Slovenia'), 3000, 'src\\main\\resources\\img\\UEFA Europa League\\Mura.png'),
 ('Kairat Almaty', (SELECT id FROM Countries WHERE country_name = 'Kazakhstan'), 6000, 'src\\main\\resources\\img\\UEFA Europa League\\Kajmat.png'),
 ('Flora Tallinn', (SELECT id FROM Countries WHERE country_name = 'Estonia'), 6250, 'src\\main\\resources\\img\\UEFA Europa League\\Flora.png'),
 ('Alashkert', (SELECT id FROM Countries WHERE country_name = 'Armenia'), 6500, 'src\\main\\resources\\img\\UEFA Europa League\\Alashkert.png'),
@@ -484,3 +484,28 @@ DROP COLUMN logo;
 
 ALTER TABLE WorldCupTeams
 ADD logo varchar(255);
+
+
+CREATE TABLE Conflicts
+(
+	id int IDENTITY(1,1) PRIMARY KEY,
+	country varchar(50) NOT NULL,
+	enemy varchar(50) NOT NULL
+);
+
+
+INSERT INTO Conflicts VALUES
+('Armenia', 'Azerbaijan'),
+('Azerbaijan', 'Armenia'),
+('Ukraine', 'Russia'),
+('Russia', 'Ukraine'),
+('Russia', 'Kosovo'),
+('Bosnia & Herzegovina', 'Kosovo'),
+('Kosovo', 'Bosnia & Herzegovina'),
+('Kosovo', 'Serbia'),
+('Kosovo', 'Russia'),
+('Serbia', 'Albania'),
+('Serbia', 'Kosovo'),
+('Albania', 'Serbia'),
+('Spain', 'Gibraltar'),
+('Gibraltar', 'Spain');
