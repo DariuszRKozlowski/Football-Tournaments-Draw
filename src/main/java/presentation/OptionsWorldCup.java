@@ -13,7 +13,6 @@ import java.util.List;
 public class OptionsWorldCup {
 
     private static final String tournamentLogo = "src\\main\\resources\\img\\FIFA World Cup 2018\\LOGO.png";
-    private static final String name = "FIFA World Cup 2018";
     private final DrawWorldCup worldCupDraw = new DrawWorldCup();
     private final TeamWorldCupDAO worldCupDAO = new TeamWorldCupDAO();
 
@@ -22,7 +21,7 @@ public class OptionsWorldCup {
     }
 
     public static String getName() {
-        return name;
+        return "FIFA World Cup 2018";
     }
 
     public TeamWorldCup[][] preparePots() {

@@ -1,5 +1,5 @@
 import presentation.WindowHome;
-import presentation.WindowWorldCup;
+import presentation.WindowWorldCupEmpty;
 
 import javax.swing.*;
 import java.io.IOException;

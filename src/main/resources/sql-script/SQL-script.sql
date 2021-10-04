@@ -509,3 +509,133 @@ INSERT INTO Conflicts VALUES
 ('Albania', 'Serbia'),
 ('Spain', 'Gibraltar'),
 ('Gibraltar', 'Spain');
+
+
+UPDATE ConferenceLeagueTeams 
+SET logo = 'src\\main\\resources\\img\\UEFA Conference League\\Roma.png'
+WHERE id = 1;
+
+UPDATE ConferenceLeagueTeams 
+SET logo = 'src\\main\\resources\\img\\UEFA Conference League\\Tottenham.png'
+WHERE id = 2;
+
+UPDATE ConferenceLeagueTeams 
+SET logo = 'src\\main\\resources\\img\\UEFA Conference League\\Basel.png'
+WHERE id = 3;
+
+
+UPDATE ConferenceLeagueTeams 
+SET logo = 'src\\main\\resources\\img\\UEFA Conference League\\Slavia.png'
+WHERE id = 4;
+
+UPDATE ConferenceLeagueTeams 
+SET logo = 'src\\main\\resources\\img\\UEFA Conference League\\Kopenhaga.png'
+WHERE id = 5;
+
+UPDATE ConferenceLeagueTeams 
+SET logo = 'src\\main\\resources\\img\\UEFA Conference League\\Gent.png'
+WHERE id = 6;
+
+UPDATE ConferenceLeagueTeams 
+SET logo = 'src\\main\\resources\\img\\UEFA Conference League\\Alkmaar.png'
+WHERE id = 7;
+
+UPDATE ConferenceLeagueTeams 
+SET logo = 'src\\main\\resources\\img\\UEFA Conference League\\LASK.png'
+WHERE id = 8;
+
+UPDATE ConferenceLeagueTeams 
+SET logo = 'src\\main\\resources\\img\\UEFA Conference League\\Lincoln.png'
+WHERE id = 9;
+
+UPDATE ConferenceLeagueTeams 
+SET logo = 'src\\main\\resources\\img\\UEFA Conference League\\Randers.png'
+WHERE id = 10;
+
+UPDATE ConferenceLeagueTeams 
+SET logo = 'src\\main\\resources\\img\\UEFA Conference League\\Omonia.png'
+WHERE id = 11;
+
+UPDATE ConferenceLeagueTeams 
+SET logo = 'src\\main\\resources\\img\\UEFA Conference League\\Anorthosis.png'
+WHERE id = 12;
+
+UPDATE ConferenceLeagueTeams 
+SET logo = 'src\\main\\resources\\img\\UEFA Conference League\\HJK.png'
+WHERE id = 13;
+
+UPDATE ConferenceLeagueTeams 
+SET logo = 'src\\main\\resources\\img\\UEFA Conference League\\Haifa.png'
+WHERE id = 14;
+
+UPDATE ConferenceLeagueTeams 
+SET logo = 'src\\main\\resources\\img\\UEFA Conference League\\BodoGlimt.png'
+WHERE id = 15;
+
+UPDATE ConferenceLeagueTeams 
+SET logo = 'src\\main\\resources\\img\\UEFA Conference League\\Mura.png'
+WHERE id = 16;
+
+UPDATE ConferenceLeagueTeams 
+SET logo = 'src\\main\\resources\\img\\UEFA Conference League\\Kajmat.png'
+WHERE id = 17;
+
+UPDATE ConferenceLeagueTeams 
+SET logo = 'src\\main\\resources\\img\\UEFA Conference League\\Flora.png'
+WHERE id = 18;
+
+UPDATE ConferenceLeagueTeams 
+SET logo = 'src\\main\\resources\\img\\UEFA Conference League\\Alashkert.png'
+WHERE id = 19;
+
+UPDATE ConferenceLeagueTeams 
+SET logo = 'src\\main\\resources\\img\\UEFA Conference League\\Jablonec.png'
+WHERE id = 20;
+
+UPDATE ConferenceLeagueTeams 
+SET logo = 'src\\main\\resources\\img\\UEFA Conference League\\Slovan.png'
+WHERE id = 21;
+
+UPDATE ConferenceLeagueTeams 
+SET logo = 'src\\main\\resources\\img\\UEFA Conference League\\Vitesse.png'
+WHERE id = 22;
+
+UPDATE ConferenceLeagueTeams 
+SET logo = 'src\\main\\resources\\img\\UEFA Conference League\\CSKASofia.png'
+WHERE id = 23;
+
+UPDATE ConferenceLeagueTeams 
+SET logo = 'src\\main\\resources\\img\\UEFA Conference League\\Union.png'
+WHERE id = 24;
+
+UPDATE ConferenceLeagueTeams 
+SET logo = 'src\\main\\resources\\img\\UEFA Conference League\\Feyenoord.png'
+WHERE id = 25;
+
+UPDATE ConferenceLeagueTeams 
+SET logo = 'src\\main\\resources\\img\\UEFA Conference League\\Qarabag.png'
+WHERE id = 26;
+
+UPDATE ConferenceLeagueTeams 
+SET logo = 'src\\main\\resources\\img\\UEFA Conference League\\Maccabi.png'
+WHERE id = 27;
+
+UPDATE ConferenceLeagueTeams 
+SET logo = 'src\\main\\resources\\img\\UEFA Conference League\\PAOK.png'
+WHERE id = 28;
+
+UPDATE ConferenceLeagueTeams 
+SET logo = 'src\\main\\resources\\img\\UEFA Conference League\\Rennes.png'
+WHERE id = 29;
+
+UPDATE ConferenceLeagueTeams 
+SET logo = 'src\\main\\resources\\img\\UEFA Conference League\\Partizan.png'
+WHERE id = 30;
+
+UPDATE ConferenceLeagueTeams 
+SET logo = 'src\\main\\resources\\img\\UEFA Conference League\\Cluj.png'
+WHERE id = 31;
+
+UPDATE ConferenceLeagueTeams 
+SET logo = 'src\\main\\resources\\img\\UEFA Conference League\\Zoria.png'
+WHERE id = 32;
