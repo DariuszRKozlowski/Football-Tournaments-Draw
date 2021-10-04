@@ -10,11 +10,11 @@ import java.util.List;
 import java.util.Random;
 
 public class DrawEuropaLeague extends Draw<TeamEuropaLeague> {
-    private static final String tournamentLogo = "src\\main\\resources\\img\\UEFA Europa League\\LOGO.png";
+
     private static final ConflictsDAO conflictDAO = new ConflictsDAO();
 
     @Override
-    public List<Team> sortTeamsOut(List<TeamEuropaLeague> listOfClubs) {
+    public List<TeamEuropaLeague> sortTeamsOut(List<TeamEuropaLeague> listOfClubs) {
         for(int i = 0 ; i < listOfClubs.size() - 1 ; i++) {
             for(int j = 0 ; j < listOfClubs.size() - 1 ; j++) {
                 if(listOfClubs.get(j).getUefaCoefficient() < listOfClubs.get(j+1).getUefaCoefficient()) {
@@ -28,8 +28,8 @@ public class DrawEuropaLeague extends Draw<TeamEuropaLeague> {
     }
 
     @Override
-    public Team[][] preparePots(List<TeamEuropaLeague> sortedTeams) {
-        Team[][] pots = new TeamEuropaLeague[4][8];
+    public TeamEuropaLeague[][] preparePots(List<TeamEuropaLeague> sortedTeams) {
+        TeamEuropaLeague[][] pots = new TeamEuropaLeague[4][8];
         int numOfPots = pots.length;
         int teamsPerPot = pots[0].length;
         int iterator = 0;
@@ -43,14 +43,14 @@ public class DrawEuropaLeague extends Draw<TeamEuropaLeague> {
     }
 
     @Override
-    public void draw(TeamEuropaLeague[][] pots) throws SQLException, IOException {
+    public TeamEuropaLeague[][] draw(TeamEuropaLeague[][] pots) throws SQLException, IOException {
         this.mixBalls(pots);
         TeamEuropaLeague[][] groups = firstPotDraw(pots[0]);
         TeamEuropaLeague[][] result = null;
         for (int i = 1 ; i < pots.length ; i++) {
             result = otherPotsDraw(groups, pots[i], i);
         }
-        if(result != null) this.show(result);
+        return result;
     }
 
     private void mixBalls(TeamEuropaLeague[][] pots) {
@@ -137,17 +137,5 @@ public class DrawEuropaLeague extends Draw<TeamEuropaLeague> {
         }
 
         return groups;
-    }
-
-    private void show(TeamEuropaLeague[][] groups) {
-        char group = 'A';
-        for (TeamEuropaLeague[] teamEuropaLeagues : groups) {
-            System.out.println("Group " + group);
-            for (int j = 0; j < groups[0].length; j++) {
-                System.out.println(teamEuropaLeagues[j].getName());
-            }
-            System.out.println();
-            group++;
-        }
     }
 }

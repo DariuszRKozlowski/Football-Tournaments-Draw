@@ -11,11 +11,10 @@ import java.util.Random;
 
 public class DrawEuropeanChampionship extends Draw<TeamEuropeanChampionship>{
 
-    private static final String tournamentLogo = "src\\main\\resources\\img\\UEFA Euro 2020\\LOGO.png";
     private static final ConflictsDAO conflictDAO = new ConflictsDAO();
 
     @Override
-    public List<Team> sortTeamsOut(List<TeamEuropeanChampionship> listOfTeams) {
+    public List<TeamEuropeanChampionship> sortTeamsOut(List<TeamEuropeanChampionship> listOfTeams) {
         List<TeamEuropeanChampionship> sortedTeams = new ArrayList<>();
         for (TeamEuropeanChampionship team : listOfTeams) {
             if (team.isHostCountry()) {
@@ -38,8 +37,8 @@ public class DrawEuropeanChampionship extends Draw<TeamEuropeanChampionship>{
     }
 
     @Override
-    public Team[][] preparePots(List<TeamEuropeanChampionship> sortedTeams) {
-        Team[][] pots = new TeamEuropeanChampionship[4][6];
+    public TeamEuropeanChampionship[][] preparePots(List<TeamEuropeanChampionship> sortedTeams) {
+        TeamEuropeanChampionship[][] pots = new TeamEuropeanChampionship[4][6];
         int numOfPots = pots.length;
         int teamsPerPot = pots[0].length;
         int iterator = 0;
@@ -53,14 +52,14 @@ public class DrawEuropeanChampionship extends Draw<TeamEuropeanChampionship>{
     }
 
     @Override
-    public void draw(TeamEuropeanChampionship[][] pots) throws SQLException, IOException {
+    public TeamEuropeanChampionship[][] draw(TeamEuropeanChampionship[][] pots) throws SQLException, IOException {
         this.mixBalls(pots);
         TeamEuropeanChampionship[][] groups = firstPotDraw(pots[0]);
         TeamEuropeanChampionship[][] result = null;
         for (int i = 1 ; i < pots.length ; i++) {
             result = otherPotsDraw(groups, pots[i], i);
         }
-        if(result != null) this.show(result);
+        return result;
     }
 
     private void mixBalls(TeamEuropeanChampionship[][] pots) {
@@ -138,15 +137,4 @@ public class DrawEuropeanChampionship extends Draw<TeamEuropeanChampionship>{
         return groups;
     }
 
-    private void show(TeamEuropeanChampionship[][] groups) {
-        char group = 'A';
-        for (TeamEuropeanChampionship[] teamEuropeanChampionships : groups) {
-            System.out.println("Group " + group);
-            for (int j = 0; j < groups[0].length; j++) {
-                System.out.println(teamEuropeanChampionships[j].getName());
-            }
-            System.out.println();
-            group++;
-        }
-    }
 }

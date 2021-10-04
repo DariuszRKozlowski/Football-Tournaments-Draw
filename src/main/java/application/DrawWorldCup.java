@@ -11,11 +11,11 @@ import java.util.Random;
 
 public class DrawWorldCup extends Draw<TeamWorldCup>{
 
-    private static final String tournamentLogo = "src\\main\\resources\\img\\FIFA World Cup 2018\\LOGO.png";
+
     private static final ConflictsDAO conflictDAO = new ConflictsDAO();
 
     @Override
-    public List<Team> sortTeamsOut(List<TeamWorldCup> listOfTeams) {
+    public List<TeamWorldCup> sortTeamsOut(List<TeamWorldCup> listOfTeams) {
         List<TeamWorldCup> sortedTeams = new ArrayList<>();
         for (TeamWorldCup team : listOfTeams) {
             if (team.isHostCountry()) {
@@ -38,8 +38,8 @@ public class DrawWorldCup extends Draw<TeamWorldCup>{
     }
 
     @Override
-    public Team[][] preparePots(List<TeamWorldCup> sortedTeams) {
-        Team[][] pots = new TeamWorldCup[4][8];
+    public TeamWorldCup[][] preparePots(List<TeamWorldCup> sortedTeams) {
+        TeamWorldCup[][] pots = new TeamWorldCup[4][8];
         int numOfPots = pots.length;
         int teamsPerPot = pots[0].length;
         int iterator = 0;
@@ -53,14 +53,14 @@ public class DrawWorldCup extends Draw<TeamWorldCup>{
     }
 
     @Override
-    public void draw(TeamWorldCup[][] pots) throws SQLException, IOException {
+    public TeamWorldCup[][] draw(TeamWorldCup[][] pots) throws SQLException, IOException {
         this.mixBalls(pots);
         TeamWorldCup[][] groups = firstPotDraw(pots[0]);
         TeamWorldCup[][] result = null;
         for (int i = 1 ; i < pots.length ; i++) {
             result = otherPotsDraw(groups, pots[i], i);
         }
-        if(result != null) this.show(result);
+        return result;
     }
 
     private void mixBalls(TeamWorldCup[][] pots) {
@@ -157,18 +157,6 @@ public class DrawWorldCup extends Draw<TeamWorldCup>{
         }
 
         return groups;
-    }
-
-    private void show(TeamWorldCup[][] groups) {
-        char group = 'A';
-        for (TeamWorldCup[] teamWorldCups : groups) {
-            System.out.println("Group " + group);
-            for (int j = 0; j < groups[0].length; j++) {
-                System.out.println(teamWorldCups[j].getName());
-            }
-            System.out.println();
-            group++;
-        }
     }
 
 }

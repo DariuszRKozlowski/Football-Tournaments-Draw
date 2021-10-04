@@ -12,12 +12,11 @@ import java.util.Random;
 
 public class DrawChampionsLeague extends Draw<TeamChampionsLeague>{
 
-    private static final String tournamentLogo = "src\\main\\resources\\img\\UEFA Champions League\\LOGO.png\"";
     private static final ConflictsDAO conflictDAO = new ConflictsDAO();
     private static final CountryDAO countryDAO = new CountryDAO();
 
     @Override
-    public List<Team> sortTeamsOut(List<TeamChampionsLeague> listOfClubs) throws SQLException, IOException {
+    public List<TeamChampionsLeague> sortTeamsOut(List<TeamChampionsLeague> listOfClubs) throws SQLException, IOException {
         List<String> bestLeagues = countryDAO.getTopEight();
         List<TeamChampionsLeague> sortedTeams = new ArrayList<>();
         for (TeamChampionsLeague club: listOfClubs) {
@@ -33,6 +32,15 @@ public class DrawChampionsLeague extends Draw<TeamChampionsLeague>{
                 int index = bestLeagues.indexOf(club.getCountry());
                 if(index < 6) {
                     sortedTeams.add(club);
+                }
+            }
+        }
+        for(int a = 2 ; a < sortedTeams.size() - 1 ; a++) {
+            for (int b = 2 ; b < sortedTeams.size() -1 ; b++) {
+                if(sortedTeams.get(b).getUefaCoefficient() < sortedTeams.get(b+1).getUefaCoefficient()) {
+                    TeamChampionsLeague storage = sortedTeams.get(b);
+                    sortedTeams.set(b, sortedTeams.get(b+1));
+                    sortedTeams.set(b + 1, storage);
                 }
             }
         }
@@ -52,8 +60,8 @@ public class DrawChampionsLeague extends Draw<TeamChampionsLeague>{
     }
 
     @Override
-    public Team[][] preparePots(List<TeamChampionsLeague> sortedTeams) {
-        Team[][] pots = new TeamChampionsLeague[4][8];
+    public TeamChampionsLeague[][] preparePots(List<TeamChampionsLeague> sortedTeams) {
+        TeamChampionsLeague[][] pots = new TeamChampionsLeague[4][8];
         int numOfPots = pots.length;
         int teamsPerPot = pots[0].length;
         int iterator = 0;
@@ -67,14 +75,14 @@ public class DrawChampionsLeague extends Draw<TeamChampionsLeague>{
     }
 
     @Override
-    public void draw(TeamChampionsLeague[][] pots) throws SQLException, IOException {
+    public TeamChampionsLeague[][] draw(TeamChampionsLeague[][] pots) throws SQLException, IOException {
         this.mixBalls(pots);
         TeamChampionsLeague[][] groups = firstPotDraw(pots[0]);
         TeamChampionsLeague[][] result = null;
         for (int i = 1 ; i < pots.length ; i++) {
             result = otherPotsDraw(groups, pots[i], i);
         }
-        if(result != null) this.show(result);
+        return result;
     }
 
     private void mixBalls(TeamChampionsLeague[][] pots) {
@@ -163,15 +171,4 @@ public class DrawChampionsLeague extends Draw<TeamChampionsLeague>{
         return groups;
     }
 
-    private void show(TeamChampionsLeague[][] groups) {
-        char group = 'A';
-        for (TeamChampionsLeague[] teamChampionsLeagues : groups) {
-            System.out.println("Group " + group);
-            for (int j = 0; j < groups[0].length; j++) {
-                System.out.println(teamChampionsLeagues[j].getName());
-            }
-            System.out.println();
-            group++;
-        }
-    }
 }
