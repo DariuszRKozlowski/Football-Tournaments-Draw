@@ -1,18 +1,27 @@
 # Football-Tournaments-Draw
-Project of the most popular football tournaments draw simulations with GUI application. 
+Project of the most popular football tournaments draw simulations as GUI application. 
 
 ## Table of contents
 * [Introduction](#introduction)
+* [Project details](#project-details)
 * [Technologies](#technologies)
 * [Setup](#setup)
 * [Sources](#sources)
 * [Screenshots](#screenshots)
 
-
 ## Introduction
-Football-Tournaments-Draw is the Maven project made for better communication between user and database. Project is dividing into data, application and presentation layers. 
-Thanks to JDBC interface and Data Access Objects program is connecting with database by specific queries. Application layer allows to create suitable
-objects from received data. Presentation layer classes display results on screen.
+Football-Tournaments-Draw is the project which allows to every football fan to simulate best football competitions groups draw.
+Draws logic takes into account all procedures of every single draw (e.g. political conflicts) which makes results possible in reality.
+Thanks to simple GUI application, results of draw are visible on the user screen.
+
+## Project details
+Project contains 3 main layers:
+* Data - creates connection between application and database thanks to JDBC & Data Access Objects,
+* Application - allows to create complete domain objects from queries results,
+* Presentation - uses application layer objects to perform results on the screen.
+
+Displaying informations about tournaments procedures are read from specific text files. Other details are directly (e.g. names, countries)
+or indirectly (logos by paths) taken from database.
 
 ## Technologies
 To create this project is used:
@@ -30,11 +39,11 @@ To create the right database of tournaments, clubs and countries follow: [SQL sc
 For successfully connection between application and database is necessary to configure `database.properties` file by own data about database path, username and password.
 
 ## Sources
-All clubs & tournaments logos and countries flags comes from [Flashscore.com](https://www.flashscore.com/)
+All clubs & tournaments logos and countries flags comes from [Flashscore.com](https://www.flashscore.com/).
 
 ## Screenshots
 
-| ![]() |
+| ![](https://github.com/DariuszRKozlowski/images/blob/main/x11.PNG) |
 |:--:|
 | <b>Main menu</b>|
 
