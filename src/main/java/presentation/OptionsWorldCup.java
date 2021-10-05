@@ -6,6 +6,7 @@ import application.Team;
 import application.TeamWorldCup;
 import dao.TeamWorldCupDAO;
 
+import java.io.FileNotFoundException;
 import java.io.IOException;
 import java.sql.SQLException;
 import java.util.List;
@@ -15,6 +16,7 @@ public class OptionsWorldCup {
     private static final String tournamentLogo = "src\\main\\resources\\img\\FIFA World Cup 2018\\LOGO.png";
     private final DrawWorldCup worldCupDraw = new DrawWorldCup();
     private final TeamWorldCupDAO worldCupDAO = new TeamWorldCupDAO();
+    private final String drawProceduresPath = "src\\main\\resources\\draw-procedures\\WorldCupProcedures.txt";
 
     public static String getTournamentLogo() {
         return tournamentLogo;
@@ -43,6 +45,10 @@ public class OptionsWorldCup {
             exception.printStackTrace();
         }
         return result;
+    }
+
+    public String getDrawProcedures() throws FileNotFoundException {
+        return worldCupDAO.getProcedures(drawProceduresPath);
     }
 
 

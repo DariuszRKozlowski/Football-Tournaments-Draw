@@ -19,8 +19,13 @@ public class WindowHome extends JFrame implements ActionListener {
         setLayout(null);
         getContentPane().setBackground(Color.GRAY);
 
-        JLabel mainText = new JLabel("Choose the right tournament!");
-        mainText.setBounds(600, 100, 800, 200);
+        JLabel header = new JLabel("Draw your favorite tournament!");
+        header.setBounds(500, 40, 1000, 200);
+        header.setFont(new Font("Arial", Font.BOLD, 60));
+        add(header);
+
+        JLabel mainText = new JLabel("Choose the one above:");
+        mainText.setBounds(670, 150, 800, 200);
         mainText.setFont(new Font("Arial", Font.BOLD, 48));
         add(mainText);
 

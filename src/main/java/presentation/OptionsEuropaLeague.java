@@ -5,6 +5,7 @@ import application.TeamEuropaLeague;
 import application.TeamWorldCup;
 import dao.TeamEuropaLeagueDAO;
 
+import java.io.FileNotFoundException;
 import java.io.IOException;
 import java.sql.SQLException;
 import java.util.List;
@@ -15,6 +16,7 @@ public class OptionsEuropaLeague {
     private static final String name = "UEFA Europa League";
     private final DrawEuropaLeague europaLeagueDraw = new DrawEuropaLeague();
     private final TeamEuropaLeagueDAO europaLeagueDAO = new TeamEuropaLeagueDAO();
+    private final String drawProceduresPath = "src\\main\\resources\\draw-procedures\\EuropaLeagueProcedures.txt";
 
     public static String getTournamentLogo() {
         return tournamentLogo;
@@ -45,4 +47,7 @@ public class OptionsEuropaLeague {
         return result;
     }
 
+    public String getDrawProcedures() throws FileNotFoundException {
+        return europaLeagueDAO.getProcedures(drawProceduresPath);
+    }
 }

@@ -27,17 +27,17 @@ public class WindowEuropeanChampionshipFinished extends JFrame implements Action
         OptionsEuropeanChampionship optionsEuropeanChampionship = new OptionsEuropeanChampionship();
         TeamEuropeanChampionship[][] pots = optionsEuropeanChampionship.preparePots();
         for(int i = 0 ; i < pots.length ; i++) {
-            int startX = 50;
+            int startX = 30;
             int startY = 50;
-            int gapX = 150;
+            int gapX = 200;
             int gapY = 100;
             for(int j = 0 ; j < pots[0].length; j++) {
                 BufferedImage clubLogo = ImageIO.read(new File(pots[i][j].getLogoPath()));
                 JLabel picLabel = new JLabel(new ImageIcon(clubLogo));
                 JLabel description = new JLabel(pots[i][j].getName() + " (" + pots[i][j].getUefaCoefficient() + ")");
-                picLabel.setBounds((j*gapX)+startX, (i*gapY)+startY, size, size);
+                picLabel.setBounds((j*gapX)+startX, (i*gapY)+startY, size + 100, size);
                 add(picLabel);
-                description.setBounds((j*gapX)+startX, (i*gapY)+startY + 40, size + 50, size);
+                description.setBounds((j*gapX)+startX + 50, (i*gapY)+startY + 40, size + 60, size);
                 description.setVisible(true);
                 add(description);
             }

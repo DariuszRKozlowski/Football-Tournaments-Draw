@@ -54,6 +54,19 @@ public class WindowWorldCupEmpty extends JFrame implements ActionListener {
         add(bCancel);
         bCancel.addActionListener(this);
 
+        JLabel proceduresHeader = new JLabel("World Cup Draw procedures");
+        proceduresHeader.setBounds(1250, 5, 650, 100);
+        proceduresHeader.setFont(new Font("Arial", Font.BOLD, 32));
+        proceduresHeader.setForeground(Color.BLACK);
+        add(proceduresHeader);
+
+        JTextArea procedures = new JTextArea(optionsWorldCup.getDrawProcedures());
+        procedures.setBounds(1250, 80, 650, 450);
+        procedures.setBackground(Color.GRAY);
+        procedures.setForeground(Color.BLACK);
+        procedures.setEditable(false);
+        add(procedures);
+
     }
 
     @Override

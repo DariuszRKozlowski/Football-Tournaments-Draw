@@ -27,17 +27,17 @@ public class WindowEuropeanChampionshipEmpty extends JFrame implements ActionLis
         OptionsEuropeanChampionship optionsEuropeanChampionship = new OptionsEuropeanChampionship();
         TeamEuropeanChampionship[][] pots = optionsEuropeanChampionship.preparePots();
         for(int i = 0 ; i < pots.length ; i++) {
-            int startX = 50;
+            int startX = 30;
             int startY = 50;
-            int gapX = 150;
+            int gapX = 200;
             int gapY = 100;
             for(int j = 0 ; j < pots[0].length; j++) {
                 BufferedImage clubLogo = ImageIO.read(new File(pots[i][j].getLogoPath()));
                 JLabel picLabel = new JLabel(new ImageIcon(clubLogo));
                 JLabel description = new JLabel(pots[i][j].getName() + " (" + pots[i][j].getUefaCoefficient() + ")");
-                picLabel.setBounds((j*gapX)+startX, (i*gapY)+startY, size, size);
+                picLabel.setBounds((j*gapX)+startX, (i*gapY)+startY, size + 100 , size);
                 add(picLabel);
-                description.setBounds((j*gapX)+startX, (i*gapY)+startY + 40, size + 50, size);
+                description.setBounds((j*gapX)+startX + 50, (i*gapY)+startY + 40, size + 60, size);
                 description.setVisible(true);
                 add(description);
             }
@@ -54,6 +54,19 @@ public class WindowEuropeanChampionshipEmpty extends JFrame implements ActionLis
         bCancel.setFont(new Font("Arial", Font.PLAIN, 36));
         add(bCancel);
         bCancel.addActionListener(this);
+
+        JLabel proceduresHeader = new JLabel("European Championship Draw procedures");
+        proceduresHeader.setBounds(1250, 5, 650, 100);
+        proceduresHeader.setFont(new Font("Arial", Font.BOLD, 32));
+        proceduresHeader.setForeground(Color.BLACK);
+        add(proceduresHeader);
+
+        JTextArea procedures = new JTextArea(optionsEuropeanChampionship.getDrawProcedures());
+        procedures.setBounds(1250, 80, 650, 450);
+        procedures.setBackground(Color.GRAY);
+        procedures.setForeground(Color.BLACK);
+        procedures.setEditable(false);
+        add(procedures);
 
     }
 

@@ -1,0 +1,20 @@
+In UEFA European Championship take part 24 countries from European federation.
+Before the draw teams are divided into 4 pots (6 national teams per each pot).
+To the first pot goes:
+- National team of tournament host country,
+- National teams from countries with the biggest Country UEFA Coefficient*.
+
+Teams into other pots are allocated only by Country UEFA Coefficient.
+From pot 1 to pot 4, each team from single pot goes to one group from A to F**.
+
+By political issues, in the same group can not play together national teams of:
+a) Russia and Ukraine,
+b) Russia and Kosovo, 
+c) Spain and Gibraltar, 
+d) Armenia and Azerbaijan,
+e) Kosovo and Bosnia & Herzegovina,
+f) Kosovo and Serbia.
+
+*If host country national team has also one of the biggest Country UEFA Coefficient,
+its place in pot is taken by national team with the next biggest coefficient.
+** Host country is automatically allocated to group A.

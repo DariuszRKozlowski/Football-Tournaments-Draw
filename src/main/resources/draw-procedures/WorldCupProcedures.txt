@@ -1,0 +1,23 @@
+In FIFA World Cup take part 32 countries from all federations.
+Before the draw teams are divided into 4 pots (8 national teams per each pot).
+To the first pot goes:
+- National team of tournament host country,
+- National teams from countries with the best position in FIFA Ranking.*
+Teams into other pots are allocated only by FIFA Ranking.
+
+From pot 1 to pot 4, each team from single pot goes to one group from A to H.**
+In the same group can not play together national teams from the same federation.***
+
+By political issues, in the same group can not play together national teams of:
+a) Russia and Ukraine,
+b) Russia and Kosovo, 
+c) Spain and Gibraltar, 
+d) Armenia and Azerbaijan,
+e) Kosovo and Bosnia & Herzegovina,
+f) Kosovo and Serbia.
+
+* If host country national team has also one of the best position in FIFA Ranking,
+its place in pot is taken by national team with the next best ranking.
+** Host country is automatically allocated to group A.
+*** Exceptions are national teams from UEFA (European Federation). In the same
+group can play maximum 2 teams sfrom this federation.

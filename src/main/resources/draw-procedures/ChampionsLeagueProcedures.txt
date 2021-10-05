@@ -1,0 +1,21 @@
+In UEFA Champions League take part 32 teams from UEFA federation.
+Before the draw teams are divided into 4 pots (8 teams per each pot).
+To the first pot goes:
+- Previous edition Champions League Winner,
+- Previous edition Europa League Winner,
+- Each country champions from six countries with the biggest Country UEFA Coefficient*.
+
+Teams into other pots are allocated only by Club UEFA Coefficient.
+From pot 1 to pot 4, each team from single pot goes to one group from A to H.
+
+In the same group can not play teams from the same country.
+By political issues, in the same group can not play together teams from:
+a) Russia and Ukraine,
+b) Russia and Kosovo, 
+c) Spain and Gibraltar, 
+d) Armenia and Azerbaijan,
+e) Kosovo and Bosnia & Herzegovina,
+f) Kosovo and Serbia.
+
+*If country champion is also current Champions (Europa) League Winner,
+free place in pot is taken by champion of country with the next biggest coefficient.
